@@ -1,0 +1,1195 @@
+extend type Exercise {
+  """
+  ✨ List `RoutineExercise` objects in a one-to-many relationship (where `RoutineExercise`.`exercise` is this object).
+  """
+  routineExercises_on_exercise(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RoutineExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RoutineExercise_Having
+  ): [RoutineExercise!]! @fdc_generated(from: "RoutineExercise.exercise", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `WorkoutExercise` objects in a one-to-many relationship (where `WorkoutExercise`.`exercise` is this object).
+  """
+  workoutExercises_on_exercise(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutExercise_Having
+  ): [WorkoutExercise!]! @fdc_generated(from: "WorkoutExercise.exercise", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `WorkoutRoutine` objects using `RoutineExercise` as the join table (a `RoutineExercise` object exists where its `exercise` is this and its `workoutRoutine` is that).
+  """
+  workoutRoutines_via_RoutineExercise(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RoutineExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RoutineExercise_Having
+  ): [WorkoutRoutine!]! @fdc_generated(from: "RoutineExercise", purpose: QUERY_MULTIPLE_MANY_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Exercise", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Exercise` table.
+  """
+  _count: Int! @fdc_generated(from: "Exercise.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Exercise` table where the `category` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  category_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise.category", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Exercise` table where the `defaultUnits` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultUnits_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise.defaultUnits", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Exercise` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Exercise` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Exercise` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise.name", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Exercise.id", purpose: ENTITY_ID)
+}
+extend type FitnessGoal {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "FitnessGoal", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table.
+  """
+  _count: Int! @fdc_generated(from: "FitnessGoal.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `currentValue` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  currentValue_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.currentValue", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `goalType` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  goalType_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.goalType", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `startDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  startDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.startDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.status", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `targetDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  targetDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.targetDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `targetValue` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  targetValue_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.targetValue", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `FitnessGoal` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `currentValue` field in the `FitnessGoal` table.
+  """
+  currentValue_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "FitnessGoal.currentValue", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `targetValue` field in the `FitnessGoal` table.
+  """
+  targetValue_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "FitnessGoal.targetValue", purpose: QUERY_SUM)
+  """
+  ✨ Average the `currentValue` field in the `FitnessGoal` table.
+  """
+  currentValue_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "FitnessGoal.currentValue", purpose: QUERY_AVG)
+  """
+  ✨ Average the `targetValue` field in the `FitnessGoal` table.
+  """
+  targetValue_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "FitnessGoal.targetValue", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `currentValue` field in the `FitnessGoal` table.
+  """
+  currentValue_min: Float @fdc_generated(from: "FitnessGoal.currentValue", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `startDate` field in the `FitnessGoal` table.
+  """
+  startDate_min: Date @fdc_generated(from: "FitnessGoal.startDate", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `targetDate` field in the `FitnessGoal` table.
+  """
+  targetDate_min: Date @fdc_generated(from: "FitnessGoal.targetDate", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `targetValue` field in the `FitnessGoal` table.
+  """
+  targetValue_min: Float @fdc_generated(from: "FitnessGoal.targetValue", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `currentValue` field in the `FitnessGoal` table.
+  """
+  currentValue_max: Float @fdc_generated(from: "FitnessGoal.currentValue", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `startDate` field in the `FitnessGoal` table.
+  """
+  startDate_max: Date @fdc_generated(from: "FitnessGoal.startDate", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `targetDate` field in the `FitnessGoal` table.
+  """
+  targetDate_max: Date @fdc_generated(from: "FitnessGoal.targetDate", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `targetValue` field in the `FitnessGoal` table.
+  """
+  targetValue_max: Float @fdc_generated(from: "FitnessGoal.targetValue", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "FitnessGoal.id", purpose: ENTITY_ID)
+}
+extend type RoutineExercise {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "RoutineExercise", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table.
+  """
+  _count: Int! @fdc_generated(from: "RoutineExercise.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `defaultDurationSeconds` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultDurationSeconds_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.defaultDurationSeconds", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `defaultReps` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultReps_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.defaultReps", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `defaultSets` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultSets_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.defaultSets", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `defaultWeight` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultWeight_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.defaultWeight", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `exerciseId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  exerciseId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.exerciseId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `order` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  order_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.order", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RoutineExercise` table where the `workoutRoutineId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  workoutRoutineId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise.workoutRoutineId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `defaultDurationSeconds` field in the `RoutineExercise` table.
+  """
+  defaultDurationSeconds_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "RoutineExercise.defaultDurationSeconds", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `defaultReps` field in the `RoutineExercise` table.
+  """
+  defaultReps_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "RoutineExercise.defaultReps", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `defaultSets` field in the `RoutineExercise` table.
+  """
+  defaultSets_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "RoutineExercise.defaultSets", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `defaultWeight` field in the `RoutineExercise` table.
+  """
+  defaultWeight_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.defaultWeight", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `order` field in the `RoutineExercise` table.
+  """
+  order_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "RoutineExercise.order", purpose: QUERY_SUM)
+  """
+  ✨ Average the `defaultDurationSeconds` field in the `RoutineExercise` table.
+  """
+  defaultDurationSeconds_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.defaultDurationSeconds", purpose: QUERY_AVG)
+  """
+  ✨ Average the `defaultReps` field in the `RoutineExercise` table.
+  """
+  defaultReps_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.defaultReps", purpose: QUERY_AVG)
+  """
+  ✨ Average the `defaultSets` field in the `RoutineExercise` table.
+  """
+  defaultSets_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.defaultSets", purpose: QUERY_AVG)
+  """
+  ✨ Average the `defaultWeight` field in the `RoutineExercise` table.
+  """
+  defaultWeight_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.defaultWeight", purpose: QUERY_AVG)
+  """
+  ✨ Average the `order` field in the `RoutineExercise` table.
+  """
+  order_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RoutineExercise.order", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `defaultDurationSeconds` field in the `RoutineExercise` table.
+  """
+  defaultDurationSeconds_min: Int @fdc_generated(from: "RoutineExercise.defaultDurationSeconds", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `defaultReps` field in the `RoutineExercise` table.
+  """
+  defaultReps_min: Int @fdc_generated(from: "RoutineExercise.defaultReps", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `defaultSets` field in the `RoutineExercise` table.
+  """
+  defaultSets_min: Int @fdc_generated(from: "RoutineExercise.defaultSets", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `defaultWeight` field in the `RoutineExercise` table.
+  """
+  defaultWeight_min: Float @fdc_generated(from: "RoutineExercise.defaultWeight", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `order` field in the `RoutineExercise` table.
+  """
+  order_min: Int @fdc_generated(from: "RoutineExercise.order", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `defaultDurationSeconds` field in the `RoutineExercise` table.
+  """
+  defaultDurationSeconds_max: Int @fdc_generated(from: "RoutineExercise.defaultDurationSeconds", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `defaultReps` field in the `RoutineExercise` table.
+  """
+  defaultReps_max: Int @fdc_generated(from: "RoutineExercise.defaultReps", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `defaultSets` field in the `RoutineExercise` table.
+  """
+  defaultSets_max: Int @fdc_generated(from: "RoutineExercise.defaultSets", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `defaultWeight` field in the `RoutineExercise` table.
+  """
+  defaultWeight_max: Float @fdc_generated(from: "RoutineExercise.defaultWeight", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `order` field in the `RoutineExercise` table.
+  """
+  order_max: Int @fdc_generated(from: "RoutineExercise.order", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "RoutineExercise.workoutRoutineId,exerciseId", purpose: ENTITY_ID)
+}
+extend type User {
+  """
+  ✨ List `FitnessGoal` objects in a one-to-many relationship (where `FitnessGoal`.`user` is this object).
+  """
+  fitnessGoals_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FitnessGoal_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FitnessGoal_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FitnessGoal_Having
+  ): [FitnessGoal!]! @fdc_generated(from: "FitnessGoal.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `WorkoutRoutine` objects in a one-to-many relationship (where `WorkoutRoutine`.`user` is this object).
+  """
+  workoutRoutines_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutRoutine_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutRoutine_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutRoutine_Having
+  ): [WorkoutRoutine!]! @fdc_generated(from: "WorkoutRoutine.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `WorkoutSession` objects in a one-to-many relationship (where `WorkoutSession`.`user` is this object).
+  """
+  workoutSessions_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutSession_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutSession_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutSession_Having
+  ): [WorkoutSession!]! @fdc_generated(from: "WorkoutSession.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `dateOfBirth` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  dateOfBirth_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.dateOfBirth", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `firstName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  firstName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.firstName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `lastName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  lastName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.lastName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `username` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  username_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.username", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `dateOfBirth` field in the `User` table.
+  """
+  dateOfBirth_min: Date @fdc_generated(from: "User.dateOfBirth", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `dateOfBirth` field in the `User` table.
+  """
+  dateOfBirth_max: Date @fdc_generated(from: "User.dateOfBirth", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "User.id", purpose: ENTITY_ID)
+}
+extend type WorkoutExercise {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "WorkoutExercise", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table.
+  """
+  _count: Int! @fdc_generated(from: "WorkoutExercise.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `durationSeconds` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  durationSeconds_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.durationSeconds", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `exerciseId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  exerciseId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.exerciseId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `reps` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  reps_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.reps", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `sets` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  sets_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.sets", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `unit` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  unit_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.unit", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `weight` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  weight_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.weight", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutExercise` table where the `workoutSessionId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  workoutSessionId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise.workoutSessionId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `durationSeconds` field in the `WorkoutExercise` table.
+  """
+  durationSeconds_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "WorkoutExercise.durationSeconds", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `reps` field in the `WorkoutExercise` table.
+  """
+  reps_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "WorkoutExercise.reps", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `sets` field in the `WorkoutExercise` table.
+  """
+  sets_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "WorkoutExercise.sets", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `weight` field in the `WorkoutExercise` table.
+  """
+  weight_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutExercise.weight", purpose: QUERY_SUM)
+  """
+  ✨ Average the `durationSeconds` field in the `WorkoutExercise` table.
+  """
+  durationSeconds_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutExercise.durationSeconds", purpose: QUERY_AVG)
+  """
+  ✨ Average the `reps` field in the `WorkoutExercise` table.
+  """
+  reps_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutExercise.reps", purpose: QUERY_AVG)
+  """
+  ✨ Average the `sets` field in the `WorkoutExercise` table.
+  """
+  sets_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutExercise.sets", purpose: QUERY_AVG)
+  """
+  ✨ Average the `weight` field in the `WorkoutExercise` table.
+  """
+  weight_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutExercise.weight", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `durationSeconds` field in the `WorkoutExercise` table.
+  """
+  durationSeconds_min: Int @fdc_generated(from: "WorkoutExercise.durationSeconds", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `reps` field in the `WorkoutExercise` table.
+  """
+  reps_min: Int @fdc_generated(from: "WorkoutExercise.reps", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `sets` field in the `WorkoutExercise` table.
+  """
+  sets_min: Int @fdc_generated(from: "WorkoutExercise.sets", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `weight` field in the `WorkoutExercise` table.
+  """
+  weight_min: Float @fdc_generated(from: "WorkoutExercise.weight", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `durationSeconds` field in the `WorkoutExercise` table.
+  """
+  durationSeconds_max: Int @fdc_generated(from: "WorkoutExercise.durationSeconds", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `reps` field in the `WorkoutExercise` table.
+  """
+  reps_max: Int @fdc_generated(from: "WorkoutExercise.reps", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `sets` field in the `WorkoutExercise` table.
+  """
+  sets_max: Int @fdc_generated(from: "WorkoutExercise.sets", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `weight` field in the `WorkoutExercise` table.
+  """
+  weight_max: Float @fdc_generated(from: "WorkoutExercise.weight", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "WorkoutExercise.id", purpose: ENTITY_ID)
+}
+extend type WorkoutRoutine {
+  """
+  ✨ List `RoutineExercise` objects in a one-to-many relationship (where `RoutineExercise`.`workoutRoutine` is this object).
+  """
+  routineExercises_on_workoutRoutine(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RoutineExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RoutineExercise_Having
+  ): [RoutineExercise!]! @fdc_generated(from: "RoutineExercise.workoutRoutine", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Exercise` objects using `RoutineExercise` as the join table (a `RoutineExercise` object exists where its `workoutRoutine` is this and its `exercise` is that).
+  """
+  exercises_via_RoutineExercise(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RoutineExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RoutineExercise_Having
+  ): [Exercise!]! @fdc_generated(from: "RoutineExercise", purpose: QUERY_MULTIPLE_MANY_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "WorkoutRoutine", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table.
+  """
+  _count: Int! @fdc_generated(from: "WorkoutRoutine.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutRoutine` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `WorkoutRoutine` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "WorkoutRoutine.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `WorkoutRoutine` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "WorkoutRoutine.createdAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "WorkoutRoutine.id", purpose: ENTITY_ID)
+}
+extend type WorkoutSession {
+  """
+  ✨ List `WorkoutExercise` objects in a one-to-many relationship (where `WorkoutExercise`.`workoutSession` is this object).
+  """
+  workoutExercises_on_workoutSession(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutExercise_Having
+  ): [WorkoutExercise!]! @fdc_generated(from: "WorkoutExercise.workoutSession", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "WorkoutSession", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table.
+  """
+  _count: Int! @fdc_generated(from: "WorkoutSession.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `durationMinutes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  durationMinutes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.durationMinutes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `notes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  notes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.notes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `sessionDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  sessionDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.sessionDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `WorkoutSession` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `durationMinutes` field in the `WorkoutSession` table.
+  """
+  durationMinutes_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "WorkoutSession.durationMinutes", purpose: QUERY_SUM)
+  """
+  ✨ Average the `durationMinutes` field in the `WorkoutSession` table.
+  """
+  durationMinutes_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "WorkoutSession.durationMinutes", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `createdAt` field in the `WorkoutSession` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "WorkoutSession.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `durationMinutes` field in the `WorkoutSession` table.
+  """
+  durationMinutes_min: Int @fdc_generated(from: "WorkoutSession.durationMinutes", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `sessionDate` field in the `WorkoutSession` table.
+  """
+  sessionDate_min: Date @fdc_generated(from: "WorkoutSession.sessionDate", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `WorkoutSession` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "WorkoutSession.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `durationMinutes` field in the `WorkoutSession` table.
+  """
+  durationMinutes_max: Int @fdc_generated(from: "WorkoutSession.durationMinutes", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `sessionDate` field in the `WorkoutSession` table.
+  """
+  sessionDate_max: Date @fdc_generated(from: "WorkoutSession.sessionDate", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "WorkoutSession.id", purpose: ENTITY_ID)
+}

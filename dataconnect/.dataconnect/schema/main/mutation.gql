@@ -1,0 +1,776 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Exercise` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  exercise_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Exercise_Data!
+  ): Exercise_KeyOutput! @fdc_generated(from: "Exercise", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `FitnessGoal` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  fitnessGoal_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: FitnessGoal_Data!
+  ): FitnessGoal_KeyOutput! @fdc_generated(from: "FitnessGoal", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `RoutineExercise` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  routineExercise_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: RoutineExercise_Data!
+  ): RoutineExercise_KeyOutput! @fdc_generated(from: "RoutineExercise", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `WorkoutExercise` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutExercise_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: WorkoutExercise_Data!
+  ): WorkoutExercise_KeyOutput! @fdc_generated(from: "WorkoutExercise", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `WorkoutRoutine` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutRoutine_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: WorkoutRoutine_Data!
+  ): WorkoutRoutine_KeyOutput! @fdc_generated(from: "WorkoutRoutine", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `WorkoutSession` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutSession_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: WorkoutSession_Data!
+  ): WorkoutSession_KeyOutput! @fdc_generated(from: "WorkoutSession", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Exercise` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  exercise_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Exercise_Data!]!
+  ): [Exercise_KeyOutput!]! @fdc_generated(from: "Exercise", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `FitnessGoal` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  fitnessGoal_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [FitnessGoal_Data!]!
+  ): [FitnessGoal_KeyOutput!]! @fdc_generated(from: "FitnessGoal", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `RoutineExercise` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  routineExercise_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [RoutineExercise_Data!]!
+  ): [RoutineExercise_KeyOutput!]! @fdc_generated(from: "RoutineExercise", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `WorkoutExercise` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutExercise_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [WorkoutExercise_Data!]!
+  ): [WorkoutExercise_KeyOutput!]! @fdc_generated(from: "WorkoutExercise", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `WorkoutRoutine` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutRoutine_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [WorkoutRoutine_Data!]!
+  ): [WorkoutRoutine_KeyOutput!]! @fdc_generated(from: "WorkoutRoutine", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `WorkoutSession` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  workoutSession_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [WorkoutSession_Data!]!
+  ): [WorkoutSession_KeyOutput!]! @fdc_generated(from: "WorkoutSession", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Exercise` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Exercise`.
+  """
+  exercise_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Exercise_Data!
+  ): Exercise_KeyOutput! @fdc_generated(from: "Exercise", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `FitnessGoal` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FitnessGoal`.
+  """
+  fitnessGoal_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: FitnessGoal_Data!
+  ): FitnessGoal_KeyOutput! @fdc_generated(from: "FitnessGoal", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `RoutineExercise` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RoutineExercise`.
+  """
+  routineExercise_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: RoutineExercise_Data!
+  ): RoutineExercise_KeyOutput! @fdc_generated(from: "RoutineExercise", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `WorkoutExercise` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutExercise`.
+  """
+  workoutExercise_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: WorkoutExercise_Data!
+  ): WorkoutExercise_KeyOutput! @fdc_generated(from: "WorkoutExercise", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `WorkoutRoutine` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutRoutine`.
+  """
+  workoutRoutine_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: WorkoutRoutine_Data!
+  ): WorkoutRoutine_KeyOutput! @fdc_generated(from: "WorkoutRoutine", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `WorkoutSession` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutSession`.
+  """
+  workoutSession_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: WorkoutSession_Data!
+  ): WorkoutSession_KeyOutput! @fdc_generated(from: "WorkoutSession", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Exercise` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Exercise`.
+  """
+  exercise_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Exercise_Data!]!
+  ): [Exercise_KeyOutput!]! @fdc_generated(from: "Exercise", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `FitnessGoal` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FitnessGoal`.
+  """
+  fitnessGoal_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [FitnessGoal_Data!]!
+  ): [FitnessGoal_KeyOutput!]! @fdc_generated(from: "FitnessGoal", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `RoutineExercise` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RoutineExercise`.
+  """
+  routineExercise_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [RoutineExercise_Data!]!
+  ): [RoutineExercise_KeyOutput!]! @fdc_generated(from: "RoutineExercise", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `WorkoutExercise` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutExercise`.
+  """
+  workoutExercise_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [WorkoutExercise_Data!]!
+  ): [WorkoutExercise_KeyOutput!]! @fdc_generated(from: "WorkoutExercise", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `WorkoutRoutine` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutRoutine`.
+  """
+  workoutRoutine_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [WorkoutRoutine_Data!]!
+  ): [WorkoutRoutine_KeyOutput!]! @fdc_generated(from: "WorkoutRoutine", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `WorkoutSession` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `WorkoutSession`.
+  """
+  workoutSession_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [WorkoutSession_Data!]!
+  ): [WorkoutSession_KeyOutput!]! @fdc_generated(from: "WorkoutSession", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Exercise` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Exercise` or `null` if not found.
+  """
+  exercise_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Exercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Exercise_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Exercise_Data!
+  ): Exercise_KeyOutput @fdc_generated(from: "Exercise", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `FitnessGoal` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `FitnessGoal` or `null` if not found.
+  """
+  fitnessGoal_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FitnessGoal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FitnessGoal_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: FitnessGoal_Data!
+  ): FitnessGoal_KeyOutput @fdc_generated(from: "FitnessGoal", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `RoutineExercise` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `RoutineExercise` or `null` if not found.
+  """
+  routineExercise_update(
+    """
+    The key used to identify the object.
+    """
+    key: RoutineExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RoutineExercise_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: RoutineExercise_Data!
+  ): RoutineExercise_KeyOutput @fdc_generated(from: "RoutineExercise", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `WorkoutExercise` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `WorkoutExercise` or `null` if not found.
+  """
+  workoutExercise_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutExercise_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: WorkoutExercise_Data!
+  ): WorkoutExercise_KeyOutput @fdc_generated(from: "WorkoutExercise", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `WorkoutRoutine` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `WorkoutRoutine` or `null` if not found.
+  """
+  workoutRoutine_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutRoutine_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutRoutine_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: WorkoutRoutine_Data!
+  ): WorkoutRoutine_KeyOutput @fdc_generated(from: "WorkoutRoutine", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `WorkoutSession` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `WorkoutSession` or `null` if not found.
+  """
+  workoutSession_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutSession_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutSession_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: WorkoutSession_Data!
+  ): WorkoutSession_KeyOutput @fdc_generated(from: "WorkoutSession", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Exercise` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  exercise_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Exercise_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Exercise_Data!
+  ): Int! @fdc_generated(from: "Exercise", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `FitnessGoal` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  fitnessGoal_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: FitnessGoal_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: FitnessGoal_Data!
+  ): Int! @fdc_generated(from: "FitnessGoal", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `RoutineExercise` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  routineExercise_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: RoutineExercise_Data!
+  ): Int! @fdc_generated(from: "RoutineExercise", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `WorkoutExercise` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  workoutExercise_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: WorkoutExercise_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: WorkoutExercise_Data!
+  ): Int! @fdc_generated(from: "WorkoutExercise", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `WorkoutRoutine` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  workoutRoutine_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: WorkoutRoutine_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: WorkoutRoutine_Data!
+  ): Int! @fdc_generated(from: "WorkoutRoutine", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `WorkoutSession` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  workoutSession_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: WorkoutSession_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: WorkoutSession_Data!
+  ): Int! @fdc_generated(from: "WorkoutSession", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Exercise` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  exercise_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Exercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Exercise_FirstRow
+  ): Exercise_KeyOutput @fdc_generated(from: "Exercise", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `FitnessGoal` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  fitnessGoal_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FitnessGoal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FitnessGoal_FirstRow
+  ): FitnessGoal_KeyOutput @fdc_generated(from: "FitnessGoal", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `RoutineExercise` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  routineExercise_delete(
+    """
+    The key used to identify the object.
+    """
+    key: RoutineExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RoutineExercise_FirstRow
+  ): RoutineExercise_KeyOutput @fdc_generated(from: "RoutineExercise", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `WorkoutExercise` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  workoutExercise_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutExercise_FirstRow
+  ): WorkoutExercise_KeyOutput @fdc_generated(from: "WorkoutExercise", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `WorkoutRoutine` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  workoutRoutine_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutRoutine_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutRoutine_FirstRow
+  ): WorkoutRoutine_KeyOutput @fdc_generated(from: "WorkoutRoutine", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `WorkoutSession` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  workoutSession_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutSession_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutSession_FirstRow
+  ): WorkoutSession_KeyOutput @fdc_generated(from: "WorkoutSession", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Exercise` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  exercise_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Exercise_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Exercise", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `FitnessGoal` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  fitnessGoal_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: FitnessGoal_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "FitnessGoal", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `RoutineExercise` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  routineExercise_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "RoutineExercise", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `WorkoutExercise` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  workoutExercise_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: WorkoutExercise_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutExercise", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `WorkoutRoutine` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  workoutRoutine_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: WorkoutRoutine_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutRoutine", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `WorkoutSession` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  workoutSession_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: WorkoutSession_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "WorkoutSession", purpose: DELETE_MULTIPLE)
+}

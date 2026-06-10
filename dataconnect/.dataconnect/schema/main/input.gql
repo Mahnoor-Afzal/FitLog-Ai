@@ -1,0 +1,2563 @@
+"""
+✨ `Exercise_KeyOutput` returns the primary key fields of table type `Exercise`.
+
+It has the same format as `Exercise_Key`, but is only used as mutation return value.
+"""
+scalar Exercise_KeyOutput
+"""
+✨ `FitnessGoal_KeyOutput` returns the primary key fields of table type `FitnessGoal`.
+
+It has the same format as `FitnessGoal_Key`, but is only used as mutation return value.
+"""
+scalar FitnessGoal_KeyOutput
+"""
+✨ `RoutineExercise_KeyOutput` returns the primary key fields of table type `RoutineExercise`.
+
+It has the same format as `RoutineExercise_Key`, but is only used as mutation return value.
+"""
+scalar RoutineExercise_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ `WorkoutExercise_KeyOutput` returns the primary key fields of table type `WorkoutExercise`.
+
+It has the same format as `WorkoutExercise_Key`, but is only used as mutation return value.
+"""
+scalar WorkoutExercise_KeyOutput
+"""
+✨ `WorkoutRoutine_KeyOutput` returns the primary key fields of table type `WorkoutRoutine`.
+
+It has the same format as `WorkoutRoutine_Key`, but is only used as mutation return value.
+"""
+scalar WorkoutRoutine_KeyOutput
+"""
+✨ `WorkoutSession_KeyOutput` returns the primary key fields of table type `WorkoutSession`.
+
+It has the same format as `WorkoutSession_Key`, but is only used as mutation return value.
+"""
+scalar WorkoutSession_KeyOutput
+"""
+✨ Generated data input type for table 'Exercise'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Exercise_Data {
+  """
+  ✨ Generated from Field `Exercise`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Exercise`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Exercise`.`category` of type `String!`
+  """
+  category: String
+  """
+  ✨ `_expr` server value variant of `category` (✨ Generated from Field `Exercise`.`category` of type `String!`)
+  """
+  category_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Exercise`.`defaultUnits` of type `String`
+  """
+  defaultUnits: String
+  """
+  ✨ `_expr` server value variant of `defaultUnits` (✨ Generated from Field `Exercise`.`defaultUnits` of type `String`)
+  """
+  defaultUnits_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Exercise`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Exercise`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Exercise`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Exercise`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Exercise'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Exercise_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Exercise_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Exercise_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Exercise_Filter!]
+  """
+  ✨ Generated from Field `Exercise`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Exercise`.`category` of type `String!`
+  """
+  category: String_Filter
+  """
+  ✨ Generated from Field `Exercise`.`defaultUnits` of type `String`
+  """
+  defaultUnits: String_Filter
+  """
+  ✨ Generated from Field `Exercise`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Exercise`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Exercise`.`routineExercises_on_exercise` of type `[RoutineExercise!]!`
+  """
+  routineExercises_on_exercise: RoutineExercise_ListFilter
+  """
+  ✨ Generated from Field `Exercise`.`workoutExercises_on_exercise` of type `[WorkoutExercise!]!`
+  """
+  workoutExercises_on_exercise: WorkoutExercise_ListFilter
+  """
+  ✨ Generated from Field `Exercise`.`workoutRoutines_via_RoutineExercise` of type `[WorkoutRoutine!]!`
+  """
+  workoutRoutines_via_RoutineExercise: WorkoutRoutine_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Exercise'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Exercise_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Exercise_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Exercise_Filter
+}
+"""
+✨ Generated having input type for table 'Exercise'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Exercise_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Exercise_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Exercise_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Exercise_Having!]
+  """
+  ✨ Generated from Field `Exercise`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Exercise`.`category_count` of type `Int!`
+  """
+  category_count: Int_Filter
+  """
+  ✨ Generated from Field `Exercise`.`defaultUnits_count` of type `Int!`
+  """
+  defaultUnits_count: Int_Filter
+  """
+  ✨ Generated from Field `Exercise`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Exercise`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Exercise`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Exercise'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Exercise_Key {
+  """
+  ✨ Generated from Field `Exercise`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Exercise`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Exercise'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Exercise_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Exercise_Filter
+}
+"""
+✨ Generated order input type for table 'Exercise'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Exercise_Order {
+  """
+  ✨ Generated from Field `Exercise`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`category` of type `String!`
+  """
+  category: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`defaultUnits` of type `String`
+  """
+  defaultUnits: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`category_count` of type `Int!`
+  """
+  category_count: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`defaultUnits_count` of type `Int!`
+  """
+  defaultUnits_count: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Exercise`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'FitnessGoal'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input FitnessGoal_Data {
+  """
+  ✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `FitnessGoal`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`user` of type `User!`
+  """
+  user: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue` of type `Float`
+  """
+  currentValue: Float
+  """
+  ✨ `_expr` server value variant of `currentValue` (✨ Generated from Field `FitnessGoal`.`currentValue` of type `Float`)
+  """
+  currentValue_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `currentValue` (✨ Generated from Field `FitnessGoal`.`currentValue` of type `Float`)
+  """
+  currentValue_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `FitnessGoal`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`goalType` of type `String!`
+  """
+  goalType: String
+  """
+  ✨ `_expr` server value variant of `goalType` (✨ Generated from Field `FitnessGoal`.`goalType` of type `String!`)
+  """
+  goalType_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`
+  """
+  startDate: Date
+  """
+  ✨ `_date` server value variant of `startDate` (✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`)
+  """
+  startDate_date: Date_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_expr` server value variant of `startDate` (✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`)
+  """
+  startDate_expr: Date_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `startDate` (✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`)
+  """
+  startDate_update: [Date_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `FitnessGoal`.`status` of type `String!`)
+  """
+  status_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`
+  """
+  targetDate: Date
+  """
+  ✨ `_date` server value variant of `targetDate` (✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`)
+  """
+  targetDate_date: Date_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_expr` server value variant of `targetDate` (✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`)
+  """
+  targetDate_expr: Date_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `targetDate` (✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`)
+  """
+  targetDate_update: [Date_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue` of type `Float!`
+  """
+  targetValue: Float
+  """
+  ✨ `_expr` server value variant of `targetValue` (✨ Generated from Field `FitnessGoal`.`targetValue` of type `Float!`)
+  """
+  targetValue_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `targetValue` (✨ Generated from Field `FitnessGoal`.`targetValue` of type `Float!`)
+  """
+  targetValue_update: [Float_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'FitnessGoal'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input FitnessGoal_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [FitnessGoal_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: FitnessGoal_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [FitnessGoal_Filter!]
+  """
+  ✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue` of type `Float`
+  """
+  currentValue: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`goalType` of type `String!`
+  """
+  goalType: String_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`
+  """
+  startDate: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`status` of type `String!`
+  """
+  status: String_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`
+  """
+  targetDate: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue` of type `Float!`
+  """
+  targetValue: Float_Filter
+}
+"""
+✨ Generated first-row input type for table 'FitnessGoal'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input FitnessGoal_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [FitnessGoal_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: FitnessGoal_Filter
+}
+"""
+✨ Generated having input type for table 'FitnessGoal'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input FitnessGoal_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [FitnessGoal_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: FitnessGoal_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [FitnessGoal_Having!]
+  """
+  ✨ Generated from Field `FitnessGoal`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_count` of type `Int!`
+  """
+  currentValue_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`goalType_count` of type `Int!`
+  """
+  goalType_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_count` of type `Int!`
+  """
+  startDate_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_count` of type `Int!`
+  """
+  targetDate_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_count` of type `Int!`
+  """
+  targetValue_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_sum` of type `Float`
+  """
+  currentValue_sum: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_sum` of type `Float`
+  """
+  targetValue_sum: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_avg` of type `Float`
+  """
+  currentValue_avg: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_avg` of type `Float`
+  """
+  targetValue_avg: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_min` of type `Float`
+  """
+  currentValue_min: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_min` of type `Date`
+  """
+  startDate_min: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_min` of type `Date`
+  """
+  targetDate_min: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_min` of type `Float`
+  """
+  targetValue_min: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_max` of type `Float`
+  """
+  currentValue_max: Float_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_max` of type `Date`
+  """
+  startDate_max: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_max` of type `Date`
+  """
+  targetDate_max: Date_Filter
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_max` of type `Float`
+  """
+  targetValue_max: Float_Filter
+}
+"""
+✨ Generated key input type for table 'FitnessGoal'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input FitnessGoal_Key {
+  """
+  ✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'FitnessGoal'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input FitnessGoal_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: FitnessGoal_Filter
+}
+"""
+✨ Generated order input type for table 'FitnessGoal'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input FitnessGoal_Order {
+  """
+  ✨ Generated from Field `FitnessGoal`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue` of type `Float`
+  """
+  currentValue: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`goalType` of type `String!`
+  """
+  goalType: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate` of type `Date!`
+  """
+  startDate: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`status` of type `String!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate` of type `Date!`
+  """
+  targetDate: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue` of type `Float!`
+  """
+  targetValue: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_count` of type `Int!`
+  """
+  currentValue_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`goalType_count` of type `Int!`
+  """
+  goalType_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_count` of type `Int!`
+  """
+  startDate_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_count` of type `Int!`
+  """
+  targetDate_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_count` of type `Int!`
+  """
+  targetValue_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_sum` of type `Float`
+  """
+  currentValue_sum: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_sum` of type `Float`
+  """
+  targetValue_sum: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_avg` of type `Float`
+  """
+  currentValue_avg: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_avg` of type `Float`
+  """
+  targetValue_avg: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_min` of type `Float`
+  """
+  currentValue_min: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_min` of type `Date`
+  """
+  startDate_min: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_min` of type `Date`
+  """
+  targetDate_min: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_min` of type `Float`
+  """
+  targetValue_min: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`currentValue_max` of type `Float`
+  """
+  currentValue_max: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`startDate_max` of type `Date`
+  """
+  startDate_max: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetDate_max` of type `Date`
+  """
+  targetDate_max: OrderDirection
+  """
+  ✨ Generated from Field `FitnessGoal`.`targetValue_max` of type `Float`
+  """
+  targetValue_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'RoutineExercise'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input RoutineExercise_Data {
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`
+  """
+  workoutRoutineId: UUID
+  """
+  ✨ `_expr` server value variant of `workoutRoutineId` (✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`)
+  """
+  workoutRoutineId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: UUID
+  """
+  ✨ `_expr` server value variant of `exerciseId` (✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`)
+  """
+  exerciseId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutine` of type `WorkoutRoutine!`
+  """
+  workoutRoutine: WorkoutRoutine_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds` of type `Int`
+  """
+  defaultDurationSeconds: Int
+  """
+  ✨ `_expr` server value variant of `defaultDurationSeconds` (✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds` of type `Int`)
+  """
+  defaultDurationSeconds_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `defaultDurationSeconds` (✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds` of type `Int`)
+  """
+  defaultDurationSeconds_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps` of type `Int!`
+  """
+  defaultReps: Int
+  """
+  ✨ `_expr` server value variant of `defaultReps` (✨ Generated from Field `RoutineExercise`.`defaultReps` of type `Int!`)
+  """
+  defaultReps_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `defaultReps` (✨ Generated from Field `RoutineExercise`.`defaultReps` of type `Int!`)
+  """
+  defaultReps_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets` of type `Int!`
+  """
+  defaultSets: Int
+  """
+  ✨ `_expr` server value variant of `defaultSets` (✨ Generated from Field `RoutineExercise`.`defaultSets` of type `Int!`)
+  """
+  defaultSets_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `defaultSets` (✨ Generated from Field `RoutineExercise`.`defaultSets` of type `Int!`)
+  """
+  defaultSets_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight` of type `Float`
+  """
+  defaultWeight: Float
+  """
+  ✨ `_expr` server value variant of `defaultWeight` (✨ Generated from Field `RoutineExercise`.`defaultWeight` of type `Float`)
+  """
+  defaultWeight_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `defaultWeight` (✨ Generated from Field `RoutineExercise`.`defaultWeight` of type `Float`)
+  """
+  defaultWeight_update: [Float_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`order` of type `Int!`
+  """
+  order: Int
+  """
+  ✨ `_expr` server value variant of `order` (✨ Generated from Field `RoutineExercise`.`order` of type `Int!`)
+  """
+  order_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `order` (✨ Generated from Field `RoutineExercise`.`order` of type `Int!`)
+  """
+  order_update: [Int_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'RoutineExercise'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RoutineExercise_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [RoutineExercise_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: RoutineExercise_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [RoutineExercise_Filter!]
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`
+  """
+  workoutRoutineId: UUID_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: UUID_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutine` of type `WorkoutRoutine!`
+  """
+  workoutRoutine: WorkoutRoutine_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds` of type `Int`
+  """
+  defaultDurationSeconds: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps` of type `Int!`
+  """
+  defaultReps: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets` of type `Int!`
+  """
+  defaultSets: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight` of type `Float`
+  """
+  defaultWeight: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order` of type `Int!`
+  """
+  order: Int_Filter
+}
+"""
+✨ Generated first-row input type for table 'RoutineExercise'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input RoutineExercise_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [RoutineExercise_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: RoutineExercise_Filter
+}
+"""
+✨ Generated having input type for table 'RoutineExercise'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RoutineExercise_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [RoutineExercise_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: RoutineExercise_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [RoutineExercise_Having!]
+  """
+  ✨ Generated from Field `RoutineExercise`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_count` of type `Int!`
+  """
+  defaultDurationSeconds_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_count` of type `Int!`
+  """
+  defaultReps_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_count` of type `Int!`
+  """
+  defaultSets_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_count` of type `Int!`
+  """
+  defaultWeight_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId_count` of type `Int!`
+  """
+  exerciseId_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_count` of type `Int!`
+  """
+  order_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId_count` of type `Int!`
+  """
+  workoutRoutineId_count: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_sum` of type `Int`
+  """
+  defaultDurationSeconds_sum: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_sum` of type `Int`
+  """
+  defaultReps_sum: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_sum` of type `Int`
+  """
+  defaultSets_sum: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_sum` of type `Float`
+  """
+  defaultWeight_sum: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_sum` of type `Int`
+  """
+  order_sum: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_avg` of type `Float`
+  """
+  defaultDurationSeconds_avg: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_avg` of type `Float`
+  """
+  defaultReps_avg: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_avg` of type `Float`
+  """
+  defaultSets_avg: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_avg` of type `Float`
+  """
+  defaultWeight_avg: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_avg` of type `Float`
+  """
+  order_avg: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_min` of type `Int`
+  """
+  defaultDurationSeconds_min: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_min` of type `Int`
+  """
+  defaultReps_min: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_min` of type `Int`
+  """
+  defaultSets_min: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_min` of type `Float`
+  """
+  defaultWeight_min: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_min` of type `Int`
+  """
+  order_min: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_max` of type `Int`
+  """
+  defaultDurationSeconds_max: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_max` of type `Int`
+  """
+  defaultReps_max: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_max` of type `Int`
+  """
+  defaultSets_max: Int_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_max` of type `Float`
+  """
+  defaultWeight_max: Float_Filter
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_max` of type `Int`
+  """
+  order_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'RoutineExercise'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input RoutineExercise_Key {
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`
+  """
+  workoutRoutineId: UUID
+  """
+  ✨ `_expr` server value variant of `workoutRoutineId` (✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`)
+  """
+  workoutRoutineId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: UUID
+  """
+  ✨ `_expr` server value variant of `exerciseId` (✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`)
+  """
+  exerciseId_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'RoutineExercise'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input RoutineExercise_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: RoutineExercise_Filter
+}
+"""
+✨ Generated order input type for table 'RoutineExercise'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input RoutineExercise_Order {
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId` of type `UUID!`
+  """
+  workoutRoutineId: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Order
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutine` of type `WorkoutRoutine!`
+  """
+  workoutRoutine: WorkoutRoutine_Order
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds` of type `Int`
+  """
+  defaultDurationSeconds: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps` of type `Int!`
+  """
+  defaultReps: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets` of type `Int!`
+  """
+  defaultSets: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight` of type `Float`
+  """
+  defaultWeight: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order` of type `Int!`
+  """
+  order: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_count` of type `Int!`
+  """
+  defaultDurationSeconds_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_count` of type `Int!`
+  """
+  defaultReps_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_count` of type `Int!`
+  """
+  defaultSets_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_count` of type `Int!`
+  """
+  defaultWeight_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`exerciseId_count` of type `Int!`
+  """
+  exerciseId_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_count` of type `Int!`
+  """
+  order_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`workoutRoutineId_count` of type `Int!`
+  """
+  workoutRoutineId_count: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_sum` of type `Int`
+  """
+  defaultDurationSeconds_sum: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_sum` of type `Int`
+  """
+  defaultReps_sum: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_sum` of type `Int`
+  """
+  defaultSets_sum: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_sum` of type `Float`
+  """
+  defaultWeight_sum: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_sum` of type `Int`
+  """
+  order_sum: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_avg` of type `Float`
+  """
+  defaultDurationSeconds_avg: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_avg` of type `Float`
+  """
+  defaultReps_avg: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_avg` of type `Float`
+  """
+  defaultSets_avg: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_avg` of type `Float`
+  """
+  defaultWeight_avg: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_avg` of type `Float`
+  """
+  order_avg: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_min` of type `Int`
+  """
+  defaultDurationSeconds_min: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_min` of type `Int`
+  """
+  defaultReps_min: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_min` of type `Int`
+  """
+  defaultSets_min: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_min` of type `Float`
+  """
+  defaultWeight_min: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_min` of type `Int`
+  """
+  order_min: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultDurationSeconds_max` of type `Int`
+  """
+  defaultDurationSeconds_max: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultReps_max` of type `Int`
+  """
+  defaultReps_max: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultSets_max` of type `Int`
+  """
+  defaultSets_max: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`defaultWeight_max` of type `Float`
+  """
+  defaultWeight_max: OrderDirection
+  """
+  ✨ Generated from Field `RoutineExercise`.`order_max` of type `Int`
+  """
+  order_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`dateOfBirth` of type `Date`
+  """
+  dateOfBirth: Date
+  """
+  ✨ `_date` server value variant of `dateOfBirth` (✨ Generated from Field `User`.`dateOfBirth` of type `Date`)
+  """
+  dateOfBirth_date: Date_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_expr` server value variant of `dateOfBirth` (✨ Generated from Field `User`.`dateOfBirth` of type `Date`)
+  """
+  dateOfBirth_expr: Date_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `dateOfBirth` (✨ Generated from Field `User`.`dateOfBirth` of type `Date`)
+  """
+  dateOfBirth_update: [Date_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String`)
+  """
+  email_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`firstName` of type `String`
+  """
+  firstName: String
+  """
+  ✨ `_expr` server value variant of `firstName` (✨ Generated from Field `User`.`firstName` of type `String`)
+  """
+  firstName_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`lastName` of type `String`
+  """
+  lastName: String
+  """
+  ✨ `_expr` server value variant of `lastName` (✨ Generated from Field `User`.`lastName` of type `String`)
+  """
+  lastName_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `User`.`username` of type `String!`
+  """
+  username: String
+  """
+  ✨ `_expr` server value variant of `username` (✨ Generated from Field `User`.`username` of type `String!`)
+  """
+  username_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`dateOfBirth` of type `Date`
+  """
+  dateOfBirth: Date_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`firstName` of type `String`
+  """
+  firstName: String_Filter
+  """
+  ✨ Generated from Field `User`.`lastName` of type `String`
+  """
+  lastName: String_Filter
+  """
+  ✨ Generated from Field `User`.`username` of type `String!`
+  """
+  username: String_Filter
+  """
+  ✨ Generated from Field `User`.`fitnessGoals_on_user` of type `[FitnessGoal!]!`
+  """
+  fitnessGoals_on_user: FitnessGoal_ListFilter
+  """
+  ✨ Generated from Field `User`.`workoutRoutines_on_user` of type `[WorkoutRoutine!]!`
+  """
+  workoutRoutines_on_user: WorkoutRoutine_ListFilter
+  """
+  ✨ Generated from Field `User`.`workoutSessions_on_user` of type `[WorkoutSession!]!`
+  """
+  workoutSessions_on_user: WorkoutSession_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_count` of type `Int!`
+  """
+  dateOfBirth_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`firstName_count` of type `Int!`
+  """
+  firstName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`lastName_count` of type `Int!`
+  """
+  lastName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`username_count` of type `Int!`
+  """
+  username_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_min` of type `Date`
+  """
+  dateOfBirth_min: Date_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_max` of type `Date`
+  """
+  dateOfBirth_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`dateOfBirth` of type `Date`
+  """
+  dateOfBirth: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`firstName` of type `String`
+  """
+  firstName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`lastName` of type `String`
+  """
+  lastName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`username` of type `String!`
+  """
+  username: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_count` of type `Int!`
+  """
+  dateOfBirth_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`firstName_count` of type `Int!`
+  """
+  firstName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`lastName_count` of type `Int!`
+  """
+  lastName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`username_count` of type `Int!`
+  """
+  username_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_min` of type `Date`
+  """
+  dateOfBirth_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `User`.`dateOfBirth_max` of type `Date`
+  """
+  dateOfBirth_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'WorkoutExercise'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input WorkoutExercise_Data {
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: UUID
+  """
+  ✨ `_expr` server value variant of `exerciseId` (✨ Generated from Field `WorkoutExercise`.`exerciseId` of type `UUID!`)
+  """
+  exerciseId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSessionId` of type `UUID!`
+  """
+  workoutSessionId: UUID
+  """
+  ✨ `_expr` server value variant of `workoutSessionId` (✨ Generated from Field `WorkoutExercise`.`workoutSessionId` of type `UUID!`)
+  """
+  workoutSessionId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSession` of type `WorkoutSession!`
+  """
+  workoutSession: WorkoutSession_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds` of type `Int`
+  """
+  durationSeconds: Int
+  """
+  ✨ `_expr` server value variant of `durationSeconds` (✨ Generated from Field `WorkoutExercise`.`durationSeconds` of type `Int`)
+  """
+  durationSeconds_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `durationSeconds` (✨ Generated from Field `WorkoutExercise`.`durationSeconds` of type `Int`)
+  """
+  durationSeconds_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps` of type `Int!`
+  """
+  reps: Int
+  """
+  ✨ `_expr` server value variant of `reps` (✨ Generated from Field `WorkoutExercise`.`reps` of type `Int!`)
+  """
+  reps_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `reps` (✨ Generated from Field `WorkoutExercise`.`reps` of type `Int!`)
+  """
+  reps_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets` of type `Int!`
+  """
+  sets: Int
+  """
+  ✨ `_expr` server value variant of `sets` (✨ Generated from Field `WorkoutExercise`.`sets` of type `Int!`)
+  """
+  sets_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `sets` (✨ Generated from Field `WorkoutExercise`.`sets` of type `Int!`)
+  """
+  sets_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`unit` of type `String!`
+  """
+  unit: String
+  """
+  ✨ `_expr` server value variant of `unit` (✨ Generated from Field `WorkoutExercise`.`unit` of type `String!`)
+  """
+  unit_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight` of type `Float!`
+  """
+  weight: Float
+  """
+  ✨ `_expr` server value variant of `weight` (✨ Generated from Field `WorkoutExercise`.`weight` of type `Float!`)
+  """
+  weight_expr: Float_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `weight` (✨ Generated from Field `WorkoutExercise`.`weight` of type `Float!`)
+  """
+  weight_update: [Float_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'WorkoutExercise'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutExercise_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [WorkoutExercise_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: WorkoutExercise_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [WorkoutExercise_Filter!]
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSessionId` of type `UUID!`
+  """
+  workoutSessionId: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSession` of type `WorkoutSession!`
+  """
+  workoutSession: WorkoutSession_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds` of type `Int`
+  """
+  durationSeconds: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps` of type `Int!`
+  """
+  reps: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets` of type `Int!`
+  """
+  sets: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`unit` of type `String!`
+  """
+  unit: String_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight` of type `Float!`
+  """
+  weight: Float_Filter
+}
+"""
+✨ Generated first-row input type for table 'WorkoutExercise'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input WorkoutExercise_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [WorkoutExercise_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: WorkoutExercise_Filter
+}
+"""
+✨ Generated having input type for table 'WorkoutExercise'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutExercise_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [WorkoutExercise_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: WorkoutExercise_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [WorkoutExercise_Having!]
+  """
+  ✨ Generated from Field `WorkoutExercise`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_count` of type `Int!`
+  """
+  durationSeconds_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exerciseId_count` of type `Int!`
+  """
+  exerciseId_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_count` of type `Int!`
+  """
+  reps_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_count` of type `Int!`
+  """
+  sets_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`unit_count` of type `Int!`
+  """
+  unit_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_count` of type `Int!`
+  """
+  weight_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSessionId_count` of type `Int!`
+  """
+  workoutSessionId_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_sum` of type `Int`
+  """
+  durationSeconds_sum: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_sum` of type `Int`
+  """
+  reps_sum: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_sum` of type `Int`
+  """
+  sets_sum: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_sum` of type `Float`
+  """
+  weight_sum: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_avg` of type `Float`
+  """
+  durationSeconds_avg: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_avg` of type `Float`
+  """
+  reps_avg: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_avg` of type `Float`
+  """
+  sets_avg: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_avg` of type `Float`
+  """
+  weight_avg: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_min` of type `Int`
+  """
+  durationSeconds_min: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_min` of type `Int`
+  """
+  reps_min: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_min` of type `Int`
+  """
+  sets_min: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_min` of type `Float`
+  """
+  weight_min: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_max` of type `Int`
+  """
+  durationSeconds_max: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_max` of type `Int`
+  """
+  reps_max: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_max` of type `Int`
+  """
+  sets_max: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_max` of type `Float`
+  """
+  weight_max: Float_Filter
+}
+"""
+✨ Generated key input type for table 'WorkoutExercise'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input WorkoutExercise_Key {
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'WorkoutExercise'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input WorkoutExercise_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: WorkoutExercise_Filter
+}
+"""
+✨ Generated order input type for table 'WorkoutExercise'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input WorkoutExercise_Order {
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exerciseId` of type `UUID!`
+  """
+  exerciseId: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSessionId` of type `UUID!`
+  """
+  workoutSessionId: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exercise` of type `Exercise!`
+  """
+  exercise: Exercise_Order
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSession` of type `WorkoutSession!`
+  """
+  workoutSession: WorkoutSession_Order
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds` of type `Int`
+  """
+  durationSeconds: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps` of type `Int!`
+  """
+  reps: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets` of type `Int!`
+  """
+  sets: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`unit` of type `String!`
+  """
+  unit: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight` of type `Float!`
+  """
+  weight: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_count` of type `Int!`
+  """
+  durationSeconds_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`exerciseId_count` of type `Int!`
+  """
+  exerciseId_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_count` of type `Int!`
+  """
+  reps_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_count` of type `Int!`
+  """
+  sets_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`unit_count` of type `Int!`
+  """
+  unit_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_count` of type `Int!`
+  """
+  weight_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`workoutSessionId_count` of type `Int!`
+  """
+  workoutSessionId_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_sum` of type `Int`
+  """
+  durationSeconds_sum: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_sum` of type `Int`
+  """
+  reps_sum: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_sum` of type `Int`
+  """
+  sets_sum: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_sum` of type `Float`
+  """
+  weight_sum: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_avg` of type `Float`
+  """
+  durationSeconds_avg: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_avg` of type `Float`
+  """
+  reps_avg: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_avg` of type `Float`
+  """
+  sets_avg: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_avg` of type `Float`
+  """
+  weight_avg: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_min` of type `Int`
+  """
+  durationSeconds_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_min` of type `Int`
+  """
+  reps_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_min` of type `Int`
+  """
+  sets_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_min` of type `Float`
+  """
+  weight_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`durationSeconds_max` of type `Int`
+  """
+  durationSeconds_max: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`reps_max` of type `Int`
+  """
+  reps_max: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`sets_max` of type `Int`
+  """
+  sets_max: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutExercise`.`weight_max` of type `Float`
+  """
+  weight_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'WorkoutRoutine'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input WorkoutRoutine_Data {
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `WorkoutRoutine`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`user` of type `User!`
+  """
+  user: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `WorkoutRoutine`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `WorkoutRoutine`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'WorkoutRoutine'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutRoutine_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [WorkoutRoutine_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: WorkoutRoutine_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [WorkoutRoutine_Filter!]
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`routineExercises_on_workoutRoutine` of type `[RoutineExercise!]!`
+  """
+  routineExercises_on_workoutRoutine: RoutineExercise_ListFilter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`exercises_via_RoutineExercise` of type `[Exercise!]!`
+  """
+  exercises_via_RoutineExercise: Exercise_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'WorkoutRoutine'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input WorkoutRoutine_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [WorkoutRoutine_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: WorkoutRoutine_Filter
+}
+"""
+✨ Generated having input type for table 'WorkoutRoutine'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutRoutine_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [WorkoutRoutine_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: WorkoutRoutine_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [WorkoutRoutine_Having!]
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'WorkoutRoutine'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input WorkoutRoutine_Key {
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'WorkoutRoutine'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input WorkoutRoutine_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: WorkoutRoutine_Filter
+}
+"""
+✨ Generated order input type for table 'WorkoutRoutine'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input WorkoutRoutine_Order {
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutRoutine`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'WorkoutSession'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input WorkoutSession_Data {
+  """
+  ✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `WorkoutSession`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`user` of type `User!`
+  """
+  user: User_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes` of type `Int`
+  """
+  durationMinutes: Int
+  """
+  ✨ `_expr` server value variant of `durationMinutes` (✨ Generated from Field `WorkoutSession`.`durationMinutes` of type `Int`)
+  """
+  durationMinutes_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `durationMinutes` (✨ Generated from Field `WorkoutSession`.`durationMinutes` of type `Int`)
+  """
+  durationMinutes_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`notes` of type `String`
+  """
+  notes: String
+  """
+  ✨ `_expr` server value variant of `notes` (✨ Generated from Field `WorkoutSession`.`notes` of type `String`)
+  """
+  notes_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`
+  """
+  sessionDate: Date
+  """
+  ✨ `_date` server value variant of `sessionDate` (✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`)
+  """
+  sessionDate_date: Date_Relative @fdc_forbiddenInVariables
+  """
+  ✨ `_expr` server value variant of `sessionDate` (✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`)
+  """
+  sessionDate_expr: Date_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `sessionDate` (✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`)
+  """
+  sessionDate_update: [Date_Update!] @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'WorkoutSession'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutSession_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [WorkoutSession_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: WorkoutSession_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [WorkoutSession_Filter!]
+  """
+  ✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes` of type `Int`
+  """
+  durationMinutes: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`notes` of type `String`
+  """
+  notes: String_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`
+  """
+  sessionDate: Date_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`workoutExercises_on_workoutSession` of type `[WorkoutExercise!]!`
+  """
+  workoutExercises_on_workoutSession: WorkoutExercise_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'WorkoutSession'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input WorkoutSession_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [WorkoutSession_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: WorkoutSession_Filter
+}
+"""
+✨ Generated having input type for table 'WorkoutSession'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input WorkoutSession_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [WorkoutSession_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: WorkoutSession_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [WorkoutSession_Having!]
+  """
+  ✨ Generated from Field `WorkoutSession`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_count` of type `Int!`
+  """
+  durationMinutes_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`notes_count` of type `Int!`
+  """
+  notes_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_count` of type `Int!`
+  """
+  sessionDate_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_sum` of type `Int`
+  """
+  durationMinutes_sum: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_avg` of type `Float`
+  """
+  durationMinutes_avg: Float_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_min` of type `Int`
+  """
+  durationMinutes_min: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_min` of type `Date`
+  """
+  sessionDate_min: Date_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_max` of type `Int`
+  """
+  durationMinutes_max: Int_Filter
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_max` of type `Date`
+  """
+  sessionDate_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'WorkoutSession'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input WorkoutSession_Key {
+  """
+  ✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'WorkoutSession'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input WorkoutSession_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: WorkoutSession_Filter
+}
+"""
+✨ Generated order input type for table 'WorkoutSession'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input WorkoutSession_Order {
+  """
+  ✨ Generated from Field `WorkoutSession`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes` of type `Int`
+  """
+  durationMinutes: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`notes` of type `String`
+  """
+  notes: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate` of type `Date!`
+  """
+  sessionDate: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_count` of type `Int!`
+  """
+  durationMinutes_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`notes_count` of type `Int!`
+  """
+  notes_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_count` of type `Int!`
+  """
+  sessionDate_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_sum` of type `Int`
+  """
+  durationMinutes_sum: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_avg` of type `Float`
+  """
+  durationMinutes_avg: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_min` of type `Int`
+  """
+  durationMinutes_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_min` of type `Date`
+  """
+  sessionDate_min: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`durationMinutes_max` of type `Int`
+  """
+  durationMinutes_max: OrderDirection
+  """
+  ✨ Generated from Field `WorkoutSession`.`sessionDate_max` of type `Date`
+  """
+  sessionDate_max: OrderDirection
+}

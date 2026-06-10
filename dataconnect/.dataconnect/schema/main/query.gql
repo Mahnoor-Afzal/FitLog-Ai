@@ -1,0 +1,368 @@
+extend type Query {
+  """
+  ✨ Look up a single `Exercise` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  exercise(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Exercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Exercise_FirstRow
+  ): Exercise @fdc_generated(from: "Exercise", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `FitnessGoal` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  fitnessGoal(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FitnessGoal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FitnessGoal_FirstRow
+  ): FitnessGoal @fdc_generated(from: "FitnessGoal", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `RoutineExercise` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  routineExercise(
+    """
+    The key used to identify the object.
+    """
+    key: RoutineExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RoutineExercise_FirstRow
+  ): RoutineExercise @fdc_generated(from: "RoutineExercise", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `WorkoutExercise` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  workoutExercise(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutExercise_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutExercise_FirstRow
+  ): WorkoutExercise @fdc_generated(from: "WorkoutExercise", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `WorkoutRoutine` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  workoutRoutine(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutRoutine_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutRoutine_FirstRow
+  ): WorkoutRoutine @fdc_generated(from: "WorkoutRoutine", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `WorkoutSession` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  workoutSession(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: WorkoutSession_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: WorkoutSession_FirstRow
+  ): WorkoutSession @fdc_generated(from: "WorkoutSession", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Exercise` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  exercises(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Exercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Exercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Exercise_Having
+  ): [Exercise!]! @fdc_generated(from: "Exercise", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `FitnessGoal` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  fitnessGoals(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FitnessGoal_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FitnessGoal_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FitnessGoal_Having
+  ): [FitnessGoal!]! @fdc_generated(from: "FitnessGoal", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `RoutineExercise` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  routineExercises(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RoutineExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RoutineExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RoutineExercise_Having
+  ): [RoutineExercise!]! @fdc_generated(from: "RoutineExercise", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `WorkoutExercise` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  workoutExercises(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutExercise_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutExercise_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutExercise_Having
+  ): [WorkoutExercise!]! @fdc_generated(from: "WorkoutExercise", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `WorkoutRoutine` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  workoutRoutines(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutRoutine_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutRoutine_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutRoutine_Having
+  ): [WorkoutRoutine!]! @fdc_generated(from: "WorkoutRoutine", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `WorkoutSession` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  workoutSessions(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: WorkoutSession_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [WorkoutSession_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: WorkoutSession_Having
+  ): [WorkoutSession!]! @fdc_generated(from: "WorkoutSession", purpose: QUERY_MULTIPLE)
+}
